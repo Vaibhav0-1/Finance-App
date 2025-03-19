@@ -1,10 +1,14 @@
 import express from "express";
 import MainRouter from "./routes/index.js";
-import UserRouter from "./routes/user.js";
+import cors from "cors";
+
+
+app.use(cors());
+app.use(express.json());
 
 const app = express();
 
 app.use("/api/v1", MainRouter);
 
 
-const PORT = 3000;
+app.listen(3000);
